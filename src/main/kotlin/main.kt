@@ -36,7 +36,7 @@ fun bottomUp(n: Int, w: IntArray, v: IntArray, W: Int): MutableList<Int> {
 //            s.add(i)
 //            j -= w[i - 1]
 //        }
-        if (V[i][j] > V[i - 1][j] && V[i][j] <= W) {
+        if (V[i][j] > V[i - 1][j]) {
             s.add(i)
             j -= w[i - 1]
         } else {
