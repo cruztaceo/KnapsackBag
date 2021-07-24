@@ -1,6 +1,6 @@
 import java.lang.Integer.max
 
-fun main(args: Array<String>) {
+fun main() {
     val n = 10
     val w = intArrayOf(85, 26, 48, 21, 22, 95, 43, 45, 55, 52)
     val v = intArrayOf(79, 32, 47, 18, 26, 85, 33, 40, 45, 59)
@@ -30,15 +30,10 @@ fun bottomUp(n: Int, w: IntArray, v: IntArray, W: Int): MutableList<Int> {
     var j = W
     val s = mutableListOf<Int>()
     while (i > 0 && j > 0) {
-//        if (V[i][j] == V[i - 1][j]) {
-//            i -= 1
-//        } else {
-//            s.add(i)
-//            j -= w[i - 1]
-//        }
         if (V[i][j] > V[i - 1][j]) {
             s.add(i)
             j -= w[i - 1]
+            i -= 1
         } else {
             i -= 1
         }
